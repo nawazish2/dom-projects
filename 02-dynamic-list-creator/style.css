@@ -1,0 +1,148 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --card-bg: #f5f5f5;
+    --border: #dddddd;
+    --btn-bg: #1a1a1a;
+    --btn-text: #ffffff;
+    --item-bg: #ffffff;
+    --del-color: #e24b4a;
+}
+
+[data-theme="dark"] {
+    --bg: #0f0f0f;
+    --text: #ffffff;
+    --card-bg: #1a1a1a;
+    --border: #333333;
+    --btn-bg: #ffffff;
+    --btn-text: #0f0f0f;
+    --item-bg: #242424;
+    --del-color: #e24b4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.box {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+button#theme-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: var(--item-bg);
+    color: var(--text);
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+button#add-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    outline: none;
+    white-space: nowrap;
+    transition: opacity 0.2s, background-color 0.3s, color 0.3s;
+}
+
+button#add-btn:hover {
+    opacity: 0.85;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: var(--item-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    animation: fadeIn 0.2s ease;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.del-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--del-color);
+    outline: none;
+    line-height: 1;
+}
+
+.empty-msg {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    padding: 10px 0;
+}
