@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="top-row">
+            <h1>Color Palette</h1>
+            <button id="theme-btn">☀️</button>
+        </div>
+        <div class="controls">
+            <button id="generate-btn">Generate Palette</button>
+            <div class="count-row">
+                <label for="color-count">Colors:</label>
+                <input type="range" id="color-count" min="4" max="20" value="10" step="1" />
+                <span id="count-display">10</span>
+            </div>
+        </div>
+        <div class="palette-grid" id="palette-grid"></div>
+        <p class="toast" id="toast"></p>
+    </div>
+</body>
+</html>
