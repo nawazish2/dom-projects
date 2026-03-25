@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Fetching Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <main class="shell">
+        <section class="hero">
+            <p class="eyebrow">DOM Project 04</p>
+            <h1>API Data Fetching Dashboard</h1>
+            <p class="intro">
+                Fetch public data from JSONPlaceholder, switch between datasets,
+                and inspect async loading, refresh, and error states.
+            </p>
+        </section>
+
+        <section class="panel">
+            <div class="toolbar">
+                <div class="dataset-switch" aria-label="Dataset selector">
+                    <button class="dataset-btn is-active" data-resource="posts" type="button">Posts</button>
+                    <button class="dataset-btn" data-resource="users" type="button">Users</button>
+                </div>
+
+                <div class="toolbar-actions">
+                    <label class="limit-picker">
+                        <span>Items</span>
+                        <select id="limit-select">
+                            <option value="6">6</option>
+                            <option value="9" selected>9</option>
+                            <option value="12">12</option>
+                        </select>
+                    </label>
+                    <button id="refresh-btn" class="refresh-btn" type="button">Refresh</button>
+                </div>
+            </div>
+
+            <p id="status-message" class="status" role="status" aria-live="polite">Ready to load data.</p>
+            <div id="results" class="results" aria-live="polite"></div>
+        </section>
+    </main>
+</body>
+</html>

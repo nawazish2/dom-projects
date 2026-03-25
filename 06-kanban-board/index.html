@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Flow Board</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <main class="app-shell">
+        <section class="intro">
+            <p class="eyebrow">DOM Project 06</p>
+            <h1>Kanban Flow Board</h1>
+            <p>
+                Capture tasks, move them across delivery stages, and keep the
+                board in sync with localStorage.
+            </p>
+        </section>
+
+        <section class="composer">
+            <form id="task-form" class="task-form">
+                <div class="field">
+                    <label for="task-title">Task title</label>
+                    <input id="task-title" name="taskTitle" type="text" placeholder="Ship loading states" maxlength="80" required>
+                </div>
+
+                <div class="field field-wide">
+                    <label for="task-details">Details</label>
+                    <textarea id="task-details" name="taskDetails" rows="3" placeholder="Add a short note about the work."></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="task-column">Start in</label>
+                    <select id="task-column" name="taskColumn">
+                        <option value="todo">To Do</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+
+                <button class="submit-btn" type="submit">Add Task</button>
+            </form>
+            <p id="board-status" class="board-status" role="status" aria-live="polite">Board ready.</p>
+        </section>
+
+        <section id="board" class="board" aria-live="polite"></section>
+    </main>
+</body>
+</html>
